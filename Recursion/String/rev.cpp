@@ -2,14 +2,15 @@
 using namespace std;
 
 // void reverse_string(char str[], int l, int h)
-void reverse_string(string &str, int l, int h)
+void reverse_string(string &str, int i, int n)
 {
-    if (l >= h)
+    if (i >= (n + 1) / 2)
         return;
 
-    swap(str[l++], str[h--]);
+    swap(str[i], str[(n - i - 1)]);
 
-    reverse_string(str, l, h);
+    i++;
+    reverse_string(str, i, n);
 
     return;
 }
@@ -23,7 +24,7 @@ int main()
     int n = str.size();
     cout << "Before " << str << endl;
 
-    reverse_string(str, 0, n - 1);
+    reverse_string(str, 0, n);
     cout << "After " << str << endl;
     return 0;
 }
