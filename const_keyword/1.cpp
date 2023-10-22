@@ -23,8 +23,17 @@ int main()
 
     // Type 2
 
-    int *const a = new int(5);
-    // data not constant--- pointer constant
+    // int *const a = new int(5);
+    // // data not constant--- pointer constant
+    // *a = 10;
+    // int b = 12;
+    // // a = &b;          //a pointer constant hai ----> can't point to b now;
+    // cout << *a << endl;
+
+    // type 3
+
+    // const int *const a = new int[5];
+    // constant data, const pointer
 
     return 0;
 }

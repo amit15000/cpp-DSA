@@ -22,5 +22,6 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "iosfwd": "cpp"
-  }
+  },
+  "azureAutomation.directory.basePath": "c:\\Users\\amitm"
 }
