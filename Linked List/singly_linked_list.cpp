@@ -23,21 +23,8 @@ public:
 
 void InsertAtHead(Node *(&head), Node *(&tail), int _val)
 {
-
-    // if (head == NULL)
-    // {
-    //     head = new Node(_val);
-    // }
-    // else
-    // {
-    //     Node *newNode = new Node(_val);
-    //     newNode->next = head;
-    //     head = newNode;
-    // }
-
-    // this much is also enough
     Node *newNode = new Node(_val);
-    // its first node of the linked list
+
     if (head == NULL)
     {
         head = newNode;
