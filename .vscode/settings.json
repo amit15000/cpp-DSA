@@ -1,0 +1,28 @@
+{
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "sstream": "cpp",
+    "regex": "cpp",
+    "numeric": "cpp",
+    "new": "cpp",
+    "vector": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "initializer_list": "cpp",
+    "valarray": "cpp",
+    "chrono": "cpp",
+    "random": "cpp",
+    "limits": "cpp",
+    "typeindex": "cpp",
+    "typeinfo": "cpp",
+    "iosfwd": "cpp"
+  },
+  "azureAutomation.directory.basePath": "c:\\Users\\amitm",
+  "cSpell.words": ["koyal", "sumit"]
+}
