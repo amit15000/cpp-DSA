@@ -21,15 +21,40 @@ public:
         this->next = NULL;
     }
 };
-Node *InsertAtHead(int _val)
+
+void *InsertAtHead(Node *(&head), int _val)
 {
-    Node *head = new Node(_val);
-    return head;
+
+    if (head == NULL)
+    {
+        head = new Node(_val);
+    }
+    else
+    {
+        Node *newNode = new Node(_val);
+        newNode->next = head;
+        head = newNode;
+    }
+}
+void printLinkedList(Node *(head))
+{
+
+    while (head != NULL)
+    {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
 }
 
 int main()
 {
-    Node *head = InsertAtHead(10);
-    cout << head->data << endl;
+    Node *head = NULL;
+    InsertAtHead(head, 112);
+    // InsertAtHead(head, 345);
+    // InsertAtHead(head, 43);
+    // InsertAtHead(head, 7);
+    // InsertAtHead(head, 11);
+    printLinkedList(head);
     return 0;
 }
