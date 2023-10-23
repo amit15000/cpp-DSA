@@ -70,6 +70,10 @@ int main()
     InsertAtHead(head, 112);
     InsertAtHead(head, 113);
     InsertAtTail(head, 12);
+    InsertAtTail(head, -5);
+    InsertAtTail(head, 45);
+    InsertAtTail(head, 78);
+    InsertAtTail(head, 34);
 
     // InsertAtHead(head, 345);
     // InsertAtHead(head, 43);
