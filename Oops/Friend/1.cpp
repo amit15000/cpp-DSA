@@ -20,7 +20,7 @@ public:
 
     void eat()
     {
-        -cout << "Eating" << endl;
+        cout << "Eating" << endl;
     }
 };
 
