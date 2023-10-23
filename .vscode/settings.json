@@ -23,5 +23,6 @@
     "typeinfo": "cpp",
     "iosfwd": "cpp"
   },
-  "azureAutomation.directory.basePath": "c:\\Users\\amitm"
+  "azureAutomation.directory.basePath": "c:\\Users\\amitm",
+  "cSpell.words": ["koyal", "sumit"]
 }
