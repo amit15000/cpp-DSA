@@ -24,6 +24,7 @@ public:
 
 int main()
 {
+    // singly linked list created
     cout << "Enter the number of nodes : ";
     int n;
     cin >> n;
