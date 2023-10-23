@@ -25,16 +25,33 @@ public:
 void *InsertAtHead(Node *(&head), int _val)
 {
 
-    if (head == NULL)
+    // if (head == NULL)
+    // {
+    //     head = new Node(_val);
+    // }
+    // else
+    // {
+    //     Node *newNode = new Node(_val);
+    //     newNode->next = head;
+    //     head = newNode;
+    // }
+
+    // this much is also enough
+    Node *newNode = new Node(_val);
+    newNode->next = head;
+    head = newNode;
+}
+void InsertAtTail(Node *(head), int _val)
+{
+
+    while (head->next != NULL)
     {
-        head = new Node(_val);
+        head = head->next;
     }
-    else
-    {
-        Node *newNode = new Node(_val);
-        newNode->next = head;
-        head = newNode;
-    }
+    Node *newNode = new Node(_val);
+
+    head->next = newNode;
+    head = newNode;
 }
 void printLinkedList(Node *(head))
 {
@@ -46,11 +63,14 @@ void printLinkedList(Node *(head))
     }
     cout << endl;
 }
-
 int main()
 {
     Node *head = NULL;
+    Node *tail = head;
     InsertAtHead(head, 112);
+    InsertAtHead(head, 113);
+    InsertAtTail(head, 12);
+
     // InsertAtHead(head, 345);
     // InsertAtHead(head, 43);
     // InsertAtHead(head, 7);
