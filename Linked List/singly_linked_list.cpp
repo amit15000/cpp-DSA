@@ -21,32 +21,15 @@ public:
         this->next = NULL;
     }
 };
+Node *InsertAtHead(int _val)
+{
+    Node *head = new Node(_val);
+    return head;
+}
 
 int main()
 {
-    // singly linked list created
-    cout << "Enter the number of nodes : ";
-    int n;
-    cin >> n;
-
-    int j = 10;
-
-    Node *head = new Node(9);
-    Node *temp = head;
-
-    for (int i = 1; i < n; i++)
-    {
-        Node *newNode = new Node(j++);
-        temp->next = newNode;
-        temp = newNode;
-    }
-    temp = head;
-
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-
+    Node *head = InsertAtHead(10);
+    cout << head->data << endl;
     return 0;
 }
