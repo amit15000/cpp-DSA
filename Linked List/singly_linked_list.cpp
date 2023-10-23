@@ -22,7 +22,7 @@ public:
     }
 };
 
-void *InsertAtHead(Node *(&head), int _val)
+void InsertAtHead(Node *(&head), Node *(&tail), int _val)
 {
 
     // if (head == NULL)
@@ -38,10 +38,18 @@ void *InsertAtHead(Node *(&head), int _val)
 
     // this much is also enough
     Node *newNode = new Node(_val);
+    // its first node of the linked list
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
     newNode->next = head;
     head = newNode;
 }
-void InsertAtTail(Node *(head), int _val)
+void InsertAtTail_using_head(Node *(head), int _val)
 {
 
     while (head->next != NULL)
@@ -52,6 +60,21 @@ void InsertAtTail(Node *(head), int _val)
 
     head->next = newNode;
     head = newNode;
+}
+void InsertAtTail_using_tail(Node *(&head), Node *(&tail), int _val)
+{
+    Node *newNode = new Node(_val);
+    // its first node of the linked list
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    tail->next = newNode;
+
+    tail = newNode;
 }
 void printLinkedList(Node *(head))
 {
@@ -67,13 +90,9 @@ int main()
 {
     Node *head = NULL;
     Node *tail = head;
-    InsertAtHead(head, 112);
-    InsertAtHead(head, 113);
-    InsertAtTail(head, 12);
-    InsertAtTail(head, -5);
-    InsertAtTail(head, 45);
-    InsertAtTail(head, 78);
-    InsertAtTail(head, 34);
+    InsertAtHead(head, tail, 112);
+    InsertAtHead(head, tail, 113);
+    InsertAtTail_using_tail(head, tail, 12);
 
     // InsertAtHead(head, 345);
     // InsertAtHead(head, 43);
