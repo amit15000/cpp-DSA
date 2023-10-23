@@ -53,6 +53,34 @@ void InsertAtTail(Node *(head), int _val)
     head->next = newNode;
     head = newNode;
 }
+void InsertAtPosition(Node *(&head), int p, int _val)
+{
+    Node *newNode = new Node(_val);
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+
+    // insertion at head
+    if (p == 0)
+    {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
+    // insert at position mid or end
+    Node *tempPrev = head;
+    for (int i = 1; i < p - 1; i++)
+    {
+        tempPrev = tempPrev->next;
+    }
+    Node *tempNext = tempPrev->next;
+
+    newNode->next = tempNext;
+    tempPrev->next = newNode;
+}
 void printLinkedList(Node *(head))
 {
 
@@ -65,20 +93,23 @@ void printLinkedList(Node *(head))
 }
 int main()
 {
+
     Node *head = NULL;
     Node *tail = head;
-    InsertAtHead(head, 112);
-    InsertAtHead(head, 113);
-    InsertAtTail(head, 12);
-    InsertAtTail(head, -5);
-    InsertAtTail(head, 45);
-    InsertAtTail(head, 78);
-    InsertAtTail(head, 34);
+    // InsertAtHead(head, 112);
+    // InsertAtHead(head, 113);
+    // InsertAtTail(head, 12);
+    // InsertAtTail(head, -5);
+    // InsertAtTail(head, 45);
+    // InsertAtTail(head, 78);
+    // InsertAtTail(head, 34);
 
-    // InsertAtHead(head, 345);
-    // InsertAtHead(head, 43);
-    // InsertAtHead(head, 7);
-    // InsertAtHead(head, 11);
+    // insert at position
+
+    InsertAtPosition(head, 0, 34);
+    InsertAtPosition(head, 0, 24);
+    InsertAtPosition(head, 0, 14);
+    InsertAtPosition(head, 0, 4);
     printLinkedList(head);
     return 0;
 }
