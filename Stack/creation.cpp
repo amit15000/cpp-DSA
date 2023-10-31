@@ -53,6 +53,10 @@ public:
             return 1;
         return 0;
     }
+    int size()
+    {
+        return top + 1;
+    }
 
     void print()
     {
