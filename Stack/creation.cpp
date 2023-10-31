@@ -32,14 +32,21 @@ public:
         top++;
         arr[top] = _val;
     }
+
     void pop()
     {
-        if (top <= -1)
-            cout << "Underflow" << endl;
 
+        if (top <= -1)
+        {
+            cout << "Underflow" << endl;
+        }
         top--;
     }
 
+    bool peek()
+    {
+        return arr[top];
+    }
     bool empty()
     {
         if (top <= -1)
@@ -61,6 +68,8 @@ int main()
     Stack amit(4);
     amit.push(212);
     amit.push(123);
+    amit.pop();
+    amit.pop();
     amit.pop();
     amit.print();
 
