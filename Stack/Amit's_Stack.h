@@ -4,17 +4,19 @@ using namespace std;
 class Stack
 {
 
-public:
+private:
     int *arr = NULL;
     int size;
-    int top;
+    int TOP;
 
+public:
     // constructor
+
     Stack(int max_size)
     {
         arr = new int[max_size];
         size = max_size;
-        top = -1;
+        TOP = -1;
     }
 
     // methods
@@ -22,61 +24,51 @@ public:
     void push(int val)
     {
         // check if stack is full
-        if (top == size - 1)
+        if (TOP == size - 1)
         {
             cout << "Stack is full";
             return;
         }
 
-        top++;
-        arr[top] = val;
+        TOP++;
+        arr[TOP] = val;
     }
 
     void pop()
     {
         // check if stack is empty
-        if (top == -1)
+        if (TOP == -1)
         {
             cout << "Stack is empty";
             return;
         }
 
-        top--;
+        TOP--;
     }
 
     bool isEmpty()
     {
-        if (top == -1)
+        if (TOP == -1)
             return 1;
+        else
+            return 0;
     }
     bool isFull()
     {
-        if (top == size - 1)
+        if (TOP == size - 1)
             return 1;
+        else
+            return 0;
     }
 
-    int peek()
+    int top()
     {
-        return arr[top];
+        return arr[TOP];
     }
     void printStack()
     {
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i <= TOP; i++)
             cout << arr[i] << " ";
         cout << endl;
     }
 };
-
-int main()
-{
-    Stack st(5);
-    st.push(10);
-    st.push(3);
-    st.push(6);
-    st.push(10);
-    st.push(8);
-    st.pop();
-    st.push(1);
-    st.printStack();
-    return 0;
-}
