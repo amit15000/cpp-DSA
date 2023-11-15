@@ -11,10 +11,10 @@
                 "_UNICODE"
             ],
             "cStandard": "c17",
-            "cppStandard": "gnu++23",
-            "intelliSenseMode": "windows-clang-x64",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "${default}",
             "configurationProvider": "ms-vscode.cpptools",
-            "compilerPath": ""
+            "compilerPath": "C:/MinGW/bin/g++.exe"
         }
     ],
     "version": 4
