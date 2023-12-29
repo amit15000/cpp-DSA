@@ -1,4 +1,5 @@
-#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
 class Queue
 {
 private:
@@ -31,9 +32,9 @@ public:
     void push(int val)
     {
         // check if queue is full
-        if (rear == maxSize)
+        if (rear == maxSize - 1)
         {
-            std::cout << "Stack is full";
+            std::cout << "Stack is full\n";
             return;
         }
 
@@ -51,7 +52,7 @@ public:
         // check if queue is empty
         if (this->empty())
         {
-            std::cout << "Queue is empty";
+            std::cout << "Queue is empty\n";
         }
 
         if (front == rear)
@@ -61,11 +62,48 @@ public:
             rear = -1;
             return;
         }
+        arr[front] = -1;
         front++;
     }
 
     int sizeOfQueue()
     {
+        if (this->empty())
+        {
+            return 0;
+        }
         return rear - front + 1;
+    }
+    int getFront()
+    {
+        if (this->empty())
+        {
+            cout << "Queue is empty";
+            return -1;
+        }
+        return arr[front];
+    }
+
+    int getRear()
+    {
+        if (this->empty())
+        {
+            cout << "Queue is empty";
+            return -1;
+        }
+        return arr[rear];
+    }
+
+    void printQueue()
+    {
+        if (this->empty())
+        {
+            cout << "Queue is empty";
+            return;
+        }
+        for (int i = front; i <= rear; i++)
+        {
+            std::cout << arr[i] << " ";
+        }
     }
 };
