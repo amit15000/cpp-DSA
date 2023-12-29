@@ -1,4 +1,5 @@
 // return the address of the string
+#include <stack>
 char *reverse(char *S, int len)
 {
     stack<char> st;

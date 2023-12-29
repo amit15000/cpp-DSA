@@ -65,6 +65,14 @@ public:
     {
         return arr[TOP];
     }
+    int topIndex()
+    {
+        return TOP;
+    }
+    int sizeOfStack()
+    {
+        return this->size;
+    }
     void printStack()
     {
         for (int i = 0; i <= TOP; i++)
