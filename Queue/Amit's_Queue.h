@@ -58,6 +58,7 @@ public:
         if (front == rear)
         {
             // this was the only element remaining that u trying to pop
+            arr[front] = -1;
             front = -1;
             rear = -1;
             return;
