@@ -21,7 +21,7 @@ Node *createTree()
 
     if (val == -1)
     {
-        return NULL;
+        return nullptr;
     }
     Node *newNode = new Node(val);
     // left child
@@ -32,7 +32,23 @@ Node *createTree()
     cout << "Right child of the " << newNode->data << endl;
     newNode->right = createTree();
 }
-main()
+void preOrderTraversal(Node *root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+    cout << root->data << " ";
+    // left child
+    preOrderTraversal(root->left);
+    // right child
+    preOrderTraversal(root->right);
+}
+
+int main()
 {
     Node *root = createTree();
+
+    preOrderTraversal(root);
+    // InOrderTraversal(root);
 }
