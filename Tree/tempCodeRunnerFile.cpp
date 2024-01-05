@@ -1,5 +1,2 @@
-int main()
-{
-    Node *root = createTree();
-    return 0;
-}
+
+    int inOrderStartingIndex = 0;
