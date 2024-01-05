@@ -11,7 +11,7 @@ public:
         {
             return root;
         }
-        TreeNode *tempRoot = root;
+
         // check left-side for first pair
         TreeNode *fisrtNode = lowestCommonAncestor(root->left, p, q);
         // check right-side for second pair
@@ -20,7 +20,7 @@ public:
         if (fisrtNode != NULL && secondNode != NULL)
         {
             // both pairs found-->tempRoot will be lca
-            return tempRoot;
+            return root;
         }
         else if (fisrtNode == NULL && secondNode != NULL)
         {
