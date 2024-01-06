@@ -68,6 +68,47 @@ void levelOrderTraversal(TreeNode *root)
         }
     }
 }
+vector<int> zigZagTraversal(TreeNode *root)
+{
+    vector<int> result;
+    if (!root)
+        return;
+
+    queue<TreeNode *> q;
+    q.push(root);
+
+    bool leftToRight = true;
+    while (!q.empty())
+    {
+        int size = q.size();
+        vector<int> ans(size);
+
+        for (int i = 0; i < size; i++)
+        {
+            TreeNode *front = q.front();
+            q.pop();
+
+            // normal insert or reverses insert
+            int index = leftToRight ? i : size - i - 1;
+            ans[index] = front->val;
+            if (front->left)
+            {
+                q.push(front->left);
+            }
+            if (front->right)
+            {
+                q.push(front->right);
+            }
+        }
+        leftToRight = !leftToRight;
+
+        for (auto i : ans)
+        {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
 void preOrderTraversal(TreeNode *root)
 {
     if (!root)
