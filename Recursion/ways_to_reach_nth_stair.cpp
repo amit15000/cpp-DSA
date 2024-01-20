@@ -9,7 +9,7 @@ int countWaysToReach(int n)
     if (n == 0)
         return 1;
 
-    return countWaysToReach(n - 1) + countWaysToReach(n - 2);
+    return countWaysToReach(n w w - 1) + countWaysToReach(n - 2);
 }
 
 int main()
@@ -20,4 +20,3 @@ int main()
     cout << ans << endl;
     return 0;
 }
-d
