@@ -23,7 +23,7 @@ TreeNode *createTree(TreeNode *root)
     cin >> val;
 
     if (val == -1)
-        return root;
+        return nullptr;
     else
     {
         TreeNode *newNode = new TreeNode(val);
@@ -46,7 +46,7 @@ void createMap(map<int, int> &nodetoIndexMap, vector<int> &preOrder)
 TreeNode *solve(vector<int> &preOrder, vector<int> &InOrder, int &preOrderIndex, int inOrderStart, int inOrderEnd, map<int, int> &nodetoIndexMap)
 {
     // base condition
-    if (preOrderIndex >= preOrder.size() || inOrderStart >= inOrderEnd)
+    if (preOrderIndex >= preOrder.size() || inOrderStart > inOrderEnd)
     {
         return nullptr;
     }
@@ -95,19 +95,21 @@ void levelOrderTraversal(TreeNode *root)
         }
     }
 }
+
 int main()
 {
-    // TreeNode *root = createTree(root);
+    TreeNode *root = createTree(root);
 
-    vector<int> preOrder = {10, 20, 40, 50, 60, 70, 30, 80};
-    vector<int> InOrder = {40, 20, 60, 70, 50, 10, 30, 80};
-    map<int, int> nodetoIndexMap;
-    createMap(nodetoIndexMap, InOrder);
+    // vector<int> preOrder = {10, 20, 40, 50, 60, 70, 30, 80};
+    // vector<int> InOrder = {40, 20, 60, 70, 50, 10, 30, 80};
+    // map<int, int> nodetoIndexMap;
+    // createMap(nodetoIndexMap, InOrder);
 
-    int preOrderIndex = 0;
-    int inOrderStart = 0;
-    int inOrderEnd = InOrder.size() - 1;
-    TreeNode *root = solve(preOrder, InOrder, preOrderIndex, inOrderStart, inOrderEnd, nodetoIndexMap);
+    // int preOrderIndex = 0;
+    // int inOrderStart = 0;
+    // int inOrderEnd = InOrder.size() - 1;
+    // TreeNode *root = solve(preOrder, InOrder, preOrderIndex, inOrderStart, inOrderEnd, nodetoIndexMap);
 
+    // preOrderTraversal(root);
     levelOrderTraversal(root);
 }
