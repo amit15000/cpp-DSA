@@ -23,7 +23,9 @@
     "typeinfo": "cpp",
     "iosfwd": "cpp",
     "stdio.h": "c",
-    "stack": "cpp"
+    "stack": "cpp",
+    "queue": "cpp",
+    "map": "cpp"
   },
   "azureAutomation.directory.basePath": "c:\\Users\\amitm",
   "cSpell.words": ["koyal", "sumit"]
