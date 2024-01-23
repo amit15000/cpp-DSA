@@ -115,7 +115,6 @@ void morrisTraversalInOrder(Node *root)
         }
         else
         {
-
             // find precdecer
             pre = current->left;
             while (pre->right != NULL && pre->right != current)
@@ -138,6 +137,44 @@ void morrisTraversalInOrder(Node *root)
     }
 }
 
+void morrisTraversalPreOrder(Node *root)
+{
+    if (!root)
+        return;
+    Node *pre, *current;
+    current = root;
+
+    while (current != NULL)
+    {
+
+        if (current->left == NULL)
+        {
+            cout << current->data << " ";
+            current = current->right;
+        }
+        else
+        {
+            // find precdecer
+            pre = current->left;
+            while (pre->right != NULL && pre->right != current)
+            {
+                pre = pre->right;
+            }
+
+            if (pre->right == NULL)
+            {
+                cout << current->data << " ";
+                pre->right = current;
+                current = current->left;
+            }
+            else
+            {
+                pre->right = NULL;
+                current = current->right;
+            }
+        }
+    }
+}
 int main()
 {
     Node *root = createTree();
@@ -154,7 +191,11 @@ int main()
     // cout << "Level Order Traversal : " << endl;
     // levelOrderTraversal(root);
 
-    cout << "Morris Traversal : " << endl;
+    cout << "Morris Traversal InOrder: " << endl;
     morrisTraversalInOrder(root);
+
+    cout << "Morris Traversal PreOrder: " << endl;
+    morrisTraversalPreOrder(root);
+
     cout << endl;
 }
