@@ -188,14 +188,14 @@ int main()
     // cout << "Post Order : ";
     // PostOrderTraversal(root);
     // cout << endl;
-    // cout << "Level Order Traversal : " << endl;
-    // levelOrderTraversal(root);
+    cout << "Level Order Traversal : " << endl;
+    levelOrderTraversal(root);
 
-    cout << "Morris Traversal InOrder: " << endl;
-    morrisTraversalInOrder(root);
+    // cout << "Morris Traversal InOrder: " << endl;
+    // morrisTraversalInOrder(root);
 
-    cout << "Morris Traversal PreOrder: " << endl;
-    morrisTraversalPreOrder(root);
+    // cout << "Morris Traversal PreOrder: " << endl;
+    // morrisTraversalPreOrder(root);
 
     cout << endl;
 }
