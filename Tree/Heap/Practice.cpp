@@ -84,6 +84,22 @@ void deleteFromHeap(int arr[], int &size)
     arr[0] = arr[size--];
     heapify(arr, size, 0);
 }
+void buildheap(int arr[], int size)
+{
+    for (int i = (size - 1) / 2; i >= 0; i--)
+    {
+        heapify(arr, size, i);
+    }
+}
+void heapSort(int arr[], int size)
+{
+    while (size > 0)
+    {
+        swap(arr[0], arr[size]);
+        size--;
+        heapify(arr, size, 0);
+    }
+}
 
 int main()
 {
@@ -94,23 +110,28 @@ int main()
     // heapify ALgorithm
 
     int arr[] = {12, 4, 6, 20, 14, 10, 11, 15, 10, 11};
-
     int size = sizeof(arr) / sizeof(int) - 1;
+
+    // Build Heap
     cout << "Given Array : ";
     printHeap(arr, size);
-    for (int i = (size - 1) / 2; i >= 0; i--)
-    {
-        heapify(arr, size, i);
-    }
     cout << "After Heapify : ";
+    buildheap(arr, size);
     printHeap(arr, size);
 
-    // delete from heap ==>root ==>arr[0] ko delete karna hai
+    // // delete from heap ==>root ==>arr[0] ko delete karna hai
 
-    deleteFromHeap(arr, size);
-    cout << "After Delete : ";
-    printHeap(arr, size);
-    deleteFromHeap(arr, size);
-    cout << "After Delete : ";
+    // deleteFromHeap(arr, size);
+    // cout << "After Delete : ";
+    // printHeap(arr, size);
+    // deleteFromHeap(arr, size);
+    // cout << "After Delete : ";
+    // printHeap(arr, size);
+
+    // heapsort
+    // first build heap then
+
+    heapSort(arr, size);
+    cout << "After HeapSort ";
     printHeap(arr, size);
 }
