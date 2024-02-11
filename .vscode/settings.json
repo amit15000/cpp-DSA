@@ -25,7 +25,9 @@
     "stdio.h": "c",
     "stack": "cpp",
     "queue": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "bitset": "cpp",
+    "utility": "cpp"
   },
   "azureAutomation.directory.basePath": "c:\\Users\\amitm",
   "cSpell.words": ["koyal", "sumit"]
