@@ -21,6 +21,16 @@ int main()
     priority_queue<int> maxHeap;
     insertInPriorityQueue(q);
 
+    // Push --- create object then insert
+    q.push(12);
+
+    // Difference when queue is of user defined data sturcture ...==>constructor call to that ds  then insertion in queue.==> q.push(MyObject(12))
+    // q.push(MyObject(12)
+
+    // Emplace--- > directly insert
+    q.emplace(34);
+    // q.push(MyObject(12) ===> no need to write like this ===>>>>>>>>>> direclty write  q.emplace(12);
+
     cout << q.top();
 
     cout << q.top();
