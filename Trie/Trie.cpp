@@ -65,10 +65,10 @@ public:
 };
 int main()
 {
-    Trie *t = new Trie();
-    t->insertWord("AMIT");
-    t->insertWord("AMYTU");
+    // Trie *t = new Trie();
+    Trie t;
+    t.insertWord("AMIT");
+    t.insertWord("AMYTU");
 
-    delete t;
     return 0;
 }
