@@ -29,7 +29,7 @@ string infixToPostfix(string s)
         char c = s[i];
 
         // if c is operand
-        if ((c <= 'a' && c >= 'z') || (c <= 'A' && c >= 'Z') || (c <= '0' && c >= '9'))
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
         {
             result += c;
         }
@@ -48,7 +48,7 @@ string infixToPostfix(string s)
         }
         else
         {
-            while ((!st.empty() && prec(c) <= prec(st.top())) || (!st.empty() && associativity(c) == 'L'))
+            while ((!st.empty() && prec(c) <= prec(st.top())) && associativity(c) == 'L')
             {
                 result += st.top();
                 st.pop();
@@ -56,11 +56,18 @@ string infixToPostfix(string s)
             st.push(c);
         }
     }
+    while (!st.empty())
+    {
+        result += st.top();
+        st.pop();
+    }
+
+    return result;
 }
 
 int main()
 {
-    string s = "a+b*c";
+    string s = "a+b*(c^d-e)^(f+g*h)-i";
     string result = infixToPostfix(s);
 
     cout << result << endl;
