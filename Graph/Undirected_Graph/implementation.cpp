@@ -43,5 +43,9 @@ int main()
     Node *node2 = new Node();
     g1.insertNode(node2, 40);
     g1.insertEdge(node1, node2);
+    Node *node3 = new Node();
+    g1.insertNode(node3, 18);
+    g1.insertEdge(node1, node3);
+    g1.insertEdge(node2, node3);
     g1.displayGraph();
 }
