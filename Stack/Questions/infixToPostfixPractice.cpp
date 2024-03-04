@@ -19,6 +19,7 @@ char associativity(char c)
         return 'R';
     return 'L';
 }
+
 string infixToPostfix(string s)
 {
     stack<char> st;
@@ -26,9 +27,9 @@ string infixToPostfix(string s)
 
     for (int i = 0; i < s.length(); i++)
     {
-        char c = s[i];
 
-        // if c is operand
+        char c = s[i];
+        cout << c << endl;
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
         {
             result += c;
@@ -44,10 +45,11 @@ string infixToPostfix(string s)
                 result += st.top();
                 st.pop();
             }
-            st.pop(); // pop the '('
+            st.pop();
         }
         else
         {
+
             while ((!st.empty() && prec(c) <= prec(st.top())) && associativity(c) == 'L')
             {
                 result += st.top();
@@ -56,53 +58,19 @@ string infixToPostfix(string s)
             st.push(c);
         }
     }
+    cout << "Operator" << endl;
     while (!st.empty())
     {
+
         result += st.top();
         st.pop();
     }
-
     return result;
-}
-
-bool isOperand(char c)
-{
-    return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9';
-}
-
-string getInfix(string exp)
-{
-    stack<string> s;
-    for (int i = 0; exp[i] != '\0'; i++)
-    {
-
-        // push operand
-        if (isOperand(exp[i]))
-        {
-            string op(1, exp[i]);
-            s.push(op);
-        }
-        else
-        {
-            // an operator
-            string op1 = s.top();
-            s.pop();
-            string op2 = s.top();
-            s.pop();
-            s.push("(" + op2 + exp[i] + op1 + ")");
-        }
-    }
-    return s.top();
 }
 
 int main()
 {
-    string s = "a+b*(c^d-e)^(f+g*h)-i";
-    string result = infixToPostfix(s);
-
-    cout << result << endl;
-
-    cout << getInfix(result) << endl;
-
-    return 0;
+    string exp = "a+b*(c^d-e)^(f+g*h)-i";
+    string res = infixToPostfix(exp);
+    cout << res << endl;
 }
