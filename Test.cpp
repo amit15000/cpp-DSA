@@ -13,4 +13,10 @@ int main()
         valueToIndexMap[i] = j++;
     }
     cout << valueToIndexMap[80];
+
+      
+    
+    
+
 }
+
