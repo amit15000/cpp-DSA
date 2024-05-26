@@ -8,64 +8,61 @@ using namespace std;
 class Solution
 {
 public:
+    /*  Function to implement Bellman Ford
+     *   edges: vector of vectors which represents the graph
+     *   S: source vertex to start traversing graph with
+     *   V: number of vertices
+     */
     vector<int> bellman_ford(int V, vector<vector<int>> &edges, int S)
     {
 
+        vector<bool> vis(V, false);
         vector<int> dist(V, pow(10, 8));
         dist[S] = 0;
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-        pq.push({0, S});
+        vis[S] = 1;
 
         for (int i = 0; i < V; i++)
         {
 
-            while (!pq.empty())
+            for (auto &vec : edges)
             {
-
-                int n = pq.top().second;
-                pq.pop();
-
-                for (auto &vec : edges)
+                if (vis[vec[0]])
                 {
-                    if (vec[0] == n)
-                    {
-                        int s = vec[0];
-                        int d = vec[1];
-                        int wt = vec[2];
-                        int nwt = dist[s] + wt;
+                    int n = vec[0];
+                    int d = vec[1];
+                    int wt = vec[2];
 
-                        if (dist[d] > nwt)
-                        {
-                            dist[d] = nwt;
-                            pq.push({nwt, d});
-                        }
+                    vis[d] = 1;
+
+                    int nwt = dist[n] + wt;
+
+                    if (dist[d] > nwt)
+                    {
+                        dist[d] = nwt;
                     }
                 }
             }
         }
 
-        pq.push({0, S});
+        // detect cycle
 
-        while (!pq.empty())
+        for (auto &vec : edges)
         {
-
-            int n = pq.top().second;
-            pq.pop();
-
-            for (auto &vec : edges)
+            if (vis[vec[0]])
             {
-                if (vec[0] == n)
-                {
-                    int s = vec[0];
-                    int d = vec[1];
-                    int wt = vec[2];
-                    int nwt = dist[s] + wt;
+                int n = vec[0];
+                int d = vec[1];
+                int wt = vec[2];
 
-                    if (dist[d] > nwt)
-                    {
-                        dist.clear();
-                        dist.push_back(-1);
-                    }
+                vis[d] = 1;
+
+                int nwt = dist[n] + wt;
+
+                if (dist[d] > nwt)
+                {
+                    dist.clear();
+                    dist.push_back(-1);
+                    break;
                 }
             }
         }
