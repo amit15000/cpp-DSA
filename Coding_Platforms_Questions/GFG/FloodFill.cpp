@@ -1,12 +1,17 @@
 vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc, int newColor)
 {
 
+    int clr = image[sr][sc];
+
+    if (clr == newColor)
+    {
+        return image;
+    }
+
+    image[sr][sc] = newColor;
     int r = image.size();
     int c = image[0].size();
-    // bfs
     queue<pair<int, int>> q;
-    int clr = image[sr][sc];
-    image[sr][sc] = newColor;
     q.push({sr, sc});
 
     while (!q.empty())
@@ -26,7 +31,7 @@ vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc, int ne
             int nr = x + dr[i];
             int nc = y + dc[i];
 
-            if ((nr >= 0 && nr < c) && (nc >= 0 && nc < c && image[nr][nc] == clr))
+            if ((nr >= 0 && nr < r) && (nc >= 0 && nc < c && image[nr][nc] == clr))
             {
                 image[nr][nc] = newColor;
                 q.push({nr, nc});
