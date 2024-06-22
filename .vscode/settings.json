@@ -27,7 +27,8 @@
     "queue": "cpp",
     "map": "cpp",
     "product_of_array_except_self": "c",
-    "functional": "cpp"
+    "functional": "cpp",
+    "cmath": "cpp"
   },
   "azureAutomation.directory.basePath": "c:\\Users\\amitm",
   "cSpell.words": ["koyal", "sumit"]
