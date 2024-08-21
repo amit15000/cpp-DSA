@@ -12,7 +12,7 @@ public:
 
         if (screen > n)
         {
-            return 10000;
+            return 10001;
         }
         if (dp[screen][clip] != -1)
             return dp[screen][clip];
