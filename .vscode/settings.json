@@ -28,8 +28,13 @@
     "map": "cpp",
     "product_of_array_except_self": "c",
     "functional": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "utility": "cpp"
   },
   "azureAutomation.directory.basePath": "c:\\Users\\amitm",
-  "cSpell.words": ["koyal", "sumit"]
+  "cSpell.words": [
+    "koyal",
+    "sumit"
+  ],
+  "C_Cpp.errorSquiggles": "enabled"
 }

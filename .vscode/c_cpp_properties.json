@@ -3,18 +3,33 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\MinGW\\include"
+                "C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
             "intelliSenseMode": "${default}",
-            "configurationProvider": "ms-vscode.cpptools",
+            "configurationProvider": "ms-vscode.cmake-tools",
             "compilerPath": "C:/MinGW/bin/g++.exe"
+        },
+        {
+            "name": "A",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "windows-gcc-x86"
         }
     ],
     "version": 4
