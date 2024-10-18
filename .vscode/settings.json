@@ -29,7 +29,8 @@
     "product_of_array_except_self": "c",
     "functional": "cpp",
     "cmath": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "ratio": "cpp"
   },
   "azureAutomation.directory.basePath": "c:\\Users\\amitm",
   "cSpell.words": [
