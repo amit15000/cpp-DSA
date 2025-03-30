@@ -3,12 +3,10 @@
 using namespace std;
 int main()
 {
-    string str = "There are 4 apples, 3 bananas, 5 oranges";
+    string str = "45acb2";
     size_t idx;
-    int num = stoi(str, &idx);
-    cout << "First Number :" << stoi(str.substr(idx), &idx) << endl;
-    cout << "Second Number :" << stoi(str.substr(idx), &idx) << endl;
-    cout << "First Number :" << stoi(str.substr(idx), &idx) << endl;
+    cout << stoi(str, &idx) << endl;
+    cout << str.substr(idx);
 
     return 0;
 }
