@@ -34,12 +34,12 @@ TreeNode *createTree(TreeNode *root)
         newNode->right = createTree(newNode);
     }
 }
-void createMap(map<int, int> &nodetoIndexMap, vector<int> &preOrder)
+void createMap(map<int, int> &nodetoIndexMap, vector<int> &InOrder)
 {
     int i = 0;
-    for (auto val : preOrder)
+    for (auto val : InOrder)
     {
-        nodetoIndexMap[i++] = val;
+        nodetoIndexMap[val] = i++;
     }
 }
 
@@ -47,6 +47,7 @@ TreeNode *solve(vector<int> &preOrder, vector<int> &InOrder, int &preOrderIndex,
 {
     // base condition
     if (preOrderIndex >= preOrder.size() || inOrderStart > inOrderEnd)
+
     {
         return nullptr;
     }
