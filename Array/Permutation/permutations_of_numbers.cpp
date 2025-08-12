@@ -14,6 +14,7 @@ void getPermut(vector<vector<int>> &res, vector<int> arr, int l, int h)
     {
         swap(arr[i], arr[l]);
         getPermut(res, arr, l + 1, h);
+        swap(arr[i], arr[l]);
     }
 }
 
