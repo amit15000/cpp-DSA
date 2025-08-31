@@ -12,7 +12,7 @@ class nStack{
 
         //initialization
 
-        for(int i = 0 ; i < n-1; i++) next[i] = i+1;
+        for(int i = 0 ; i < size-1; i++) next[i] = i+1;
         next[n-1] = -1;
 
         for(int i=0;i<n;i++) top[i] = -1;
@@ -20,7 +20,7 @@ class nStack{
         free = 0;
     }
 
-    int push(int _x, int _sn){
+    void push(int _x, int _sn){
 
         if(free == -1){
             cout<<"Stack overflow "<<endl;
