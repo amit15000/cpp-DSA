@@ -34,8 +34,10 @@ int main()
 
     getPermut(res, arr, 0, n - 1);
 
+    int i = 1;
     for (auto vec : res)
     {
+        cout << i++ << " ";
         for (auto t : vec)
         {
             cout << t << " ";
