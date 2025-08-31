@@ -16,7 +16,7 @@ void printPattern(const vector<int> &arr)
             if (val == i)
                 cout << "*\t";
             else
-                cout << " \t";
+                cout << "_\t";
         }
         cout << endl;
     }
@@ -24,7 +24,7 @@ void printPattern(const vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {4, -3, 2, 5};
+    vector<int> arr = {5,3,4,-2,0,5,4,-3};
     printPattern(arr);
     return 0;
 }

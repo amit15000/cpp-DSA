@@ -23,7 +23,7 @@ class nStack{
     void push(int _x, int _sn){
 
         if(free == -1){
-            cout<<"Stack overflow "<<endl;
+            cout<<"Stack overflow "<<endl;w
             return;
         }
         
