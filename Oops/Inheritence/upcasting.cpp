@@ -26,7 +26,7 @@ public:
     }
     // void fly()
     // {
-    //     std::cout << "child is eating\n";
+    //     std::cout << "child is flying\n";
     // }
 };
 int main()
@@ -37,4 +37,5 @@ int main()
     amit->fly();
 
     return 0;
+
 }
