@@ -11,5 +11,5 @@ int main()
 
     ss >> a >> b >> c;
 
-    cout << a << b << c;
+    cout << a << b;           //<< c<<a<<b<<c;
 }
